@@ -1566,7 +1566,7 @@ class Milvus(VectorStore):
 
     @staticmethod
     def _as_list(value: Union[T, List[T]]) -> List[T]:
-        return [value] if not isinstance(value, list) else value
+        return (value) if not isinstance(value, list) else value
 
     def _create_ranker(
         self,
