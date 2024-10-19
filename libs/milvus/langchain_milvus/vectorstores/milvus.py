@@ -1566,8 +1566,7 @@ class Milvus(VectorStore):
 
     @staticmethod
     def _as_list(value: Union[T, List[T]]) -> List[T]:
-        """If value is a list, return it, otherwise, wrap it in a list and return"""
-        return [value]
+        return [value] if not isinstance(value, list) else value
 
     def _create_ranker(
         self,
